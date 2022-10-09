@@ -1,0 +1,8 @@
+config: "config.yaml"
+
+include: "modules/module.smk"
+
+rule all:
+    input:
+        expand("results/analysis/{outfile}.txt",
+               outfile = config["dataset"])
